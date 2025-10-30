@@ -1,0 +1,35 @@
+{
+  "network": "Somnia Testnet",
+  "chainId": 50312,
+  "timestamp": "2025-10-27T15:40:14.175Z",
+  "deployer": "0xC188d7E186682502B0177bEbE427828e8F5daf50",
+  "contracts": {
+    "SennaToken": {
+      "address": "0x7d3A5384Bc27F09fD266fE7e1793657a68b2BE04",
+      "transaction": "0x4b3499f21dbc7c3ee8c011a119d907a5c360301cbb5252643ffdb3f84a952ffd",
+      "blockNumber": 213168919,
+      "initialSupply": "1000000000000000000000000"
+    },
+    "SennaWallet": {
+      "address": "0x8fF00Ae721bA86BD6cD7b14A349d82F57C1E8aA0",
+      "transaction": "0xf4f521ea3a4fce442372a067895c90934751063325425d01407e92bf243a54ad",
+      "blockNumber": 213168963,
+      "owners": [
+        "0xC188d7E186682502B0177bEbE427828e8F5daf50",
+        "0x0000000000000000000000000000000000000001"
+      ],
+      "requiredConfirmations": 1
+    }
+  },
+  "configuration": {
+    "owners": [
+      "0xC188d7E186682502B0177bEbE427828e8F5daf50",
+      "0x0000000000000000000000000000000000000001"
+    ],
+    "requiredConfirmations": 1,
+    "initialTokenSupply": {
+      "type": "BigNumber",
+      "hex": "0xd3c21bcecceda1000000"
+    }
+  }
+}

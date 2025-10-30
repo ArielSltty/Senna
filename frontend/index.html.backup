@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senna Wallet - AI-Powered Wallet Agent</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="assets/logo.png" alt="Senna Wallet" class="logo-img">
+                        <span>Senna Wallet</span>
+                    </div>
+                    <div class="network-badge">
+                        <i class="fas fa-circle"></i>
+                        <span>Somnia Network</span>
+                    </div>
+                </div>
+                <div class="wallet-section">
+                    <div class="wallet-info" id="walletInfo">
+                        <span class="wallet-address" id="walletAddress">Not connected</span>
+                        <div class="balance" id="walletBalance">-</div>
+                    </div>
+                    <button class="btn btn-primary" id="connectWalletBtn">
+                        <i class="fas fa-wallet"></i>
+                        Connect Wallet
+                    </button>
+                    <button class="btn btn-secondary" id="createWalletBtn">
+                        <i class="fas fa-plus"></i>
+                        Create New
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" id="quickBalance">
+                            <i class="fas fa-wallet"></i>
+                            Check Balance
+                        </button>
+                        <button class="action-btn" id="quickSend">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Crypto
+                        </button>
+                        <button class="action-btn" id="quickPrice">
+                            <i class="fas fa-chart-line"></i>
+                            Check Price
+                        </button>
+                        <button class="action-btn" id="quickBuy">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy SOMI
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Recent Transactions</h3>
+                    <div class="transactions-list" id="transactionsList">
+                        <div class="empty-state">
+                            <i class="fas fa-exchange-alt"></i>
+                            <p>No transactions yet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Market Data</h3>
+                    <div class="market-data" id="marketData">
+                        <div class="market-item">
+                            <span class="market-label">SOMI Price:</span>
+                            <span class="market-value" id="somiPrice">-</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="market-label">STT Price:</span>
+                            <span class="market-value" id="sttPrice">-</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="market-label">24h Change:</span>
+                            <span class="market-value positive" id="priceChange">-</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Chat Interface -->
+            <section class="chat-section">
+                <div class="chat-header">
+                    <div class="ai-agent-info">
+                        <div class="ai-avatar">
+                            <img src="assets/logo.png" alt="Senna AI" class="avatar-img">
+                        </div>
+                        <div class="ai-details">
+                            <h2>Senna AI Assistant</h2>
+                            <p>Your personal crypto wallet agent</p>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="icon-btn" id="clearChatBtn" title="Clear Chat">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="icon-btn" id="helpBtn" title="Help">
+                            <i class="fas fa-question"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Welcome Message -->
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <img src="assets/logo.png" alt="Senna AI" class="avatar-img">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <h4>🤖 Welcome to Senna Wallet!</h4>
+                                <p>I'm your AI-powered wallet assistant for Somnia Blockchain. You can talk to me naturally to manage your crypto!</p>
+                                <div class="quick-examples">
+                                    <p><strong>Try saying:</strong></p>
+                                    <ul>
+                                        <li>"Show my balance"</li>
+                                        <li>"Send 10 STT to 0x..."</li>
+                                        <li>"What's the SOMI price today?"</li>
+                                        <li>"Create a new wallet for me"</li>
+                                        <li>"I want to buy 100k IDR worth of SOMI"</li>
+                                    </ul>
+                                </div>
+                                <p>Just type what you want to do below! 👇</p>
+                            </div>
+                            <div class="message-time">Just now</div>
+                        </div>
+                    </div>
+
+                    <!-- Example User Message -->
+                    <div class="message user-message">
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <p>Show my balance</p>
+                            </div>
+                            <div class="message-time">2:30 PM</div>
+                        </div>
+                        <div class="message-avatar">
+                            <img src="assets/logo.png" alt="User" class="avatar-img">
+                        </div>
+                    </div>
+
+                    <!-- Example AI Response -->
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <img src="assets/logo.png" alt="Senna AI" class="avatar-img">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <p>Your current balance is:</p>
+                                <div class="balance-display">
+                                    <strong>10.5 STT</strong> (Somnia Test Token)
+                                </div>
+                                <div class="balance-display">
+                                    <strong>0.85 SOMI</strong> (Somnia Main Token)
+                                </div>
+                                <p>Would you like to perform any transactions?</p>
+                            </div>
+                            <div class="message-time">2:31 PM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="quick-action-buttons">
+                    <button class="quick-action-btn" data-action="balance">
+                        <i class="fas fa-wallet"></i>
+                        Balance
+                    </button>
+                    <button class="quick-action-btn" data-action="send">
+                        <i class="fas fa-paper-plane"></i>
+                        Send
+                    </button>
+                    <button class="quick-action-btn" data-action="price">
+                        <i class="fas fa-chart-line"></i>
+                        Price
+                    </button>
+                    <button class="quick-action-btn" data-action="help">
+                        <i class="fas fa-question-circle"></i>
+                        Help
+                    </button>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <div class="input-wrapper">
+                        <div class="input-actions">
+                            <button class="input-action-btn" id="attachBtn" title="Attach File">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="input-action-btn" id="emojiBtn" title="Add Emoji">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                        </div>
+                        <textarea 
+                            id="chatInput" 
+                            placeholder="Talk to Senna... Example: 'Send 5 STT to 0xABC...' or 'Show my balance'"
+                            rows="1"
+                        ></textarea>
+                        <button class="send-btn" id="sendMessageBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="input-hints">
+                        <span>Press Enter to send • Shift+Enter for new line</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modals -->
+        <!-- Wallet Creation Modal -->
+        <div class="modal" id="walletModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Create New Wallet</h3>
+                    <button class="modal-close" id="closeWalletModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p><strong>Important:</strong> Save your private key and mnemonic securely. We cannot recover them if lost.</p>
+                    </div>
+                    <div class="wallet-result" id="walletResult">
+                        <div class="result-item">
+                            <label>Address:</label>
+                            <div class="result-value" id="newWalletAddress">-</div>
+                        </div>
+                        <div class="result-item">
+                            <label>Private Key:</label>
+                            <div class="result-value sensitive" id="newWalletPrivateKey">-</div>
+                        </div>
+                        <div class="result-item">
+                            <label>Mnemonic:</label>
+                            <div class="result-value sensitive" id="newWalletMnemonic">-</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="copyWalletData">Copy All</button>
+                    <button class="btn btn-primary" id="downloadWalletData">Download Backup</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transaction Modal -->
+        <div class="modal" id="transactionModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Confirm Transaction</h3>
+                    <button class="modal-close" id="closeTransactionModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="transaction-details" id="transactionDetails">
+                        <!-- Transaction details will be populated here -->
+                    </div>
+                    <div class="private-key-input">
+                        <label for="privateKeyInput">Private Key (for signing):</label>
+                        <input type="password" id="privateKeyInput" placeholder="Enter your private key">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="cancelTransaction">Cancel</button>
+                    <button class="btn btn-primary" id="confirmTransaction">Confirm & Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner">
+                <i class="fas fa-circle-notch fa-spin"></i>
+                <p>Processing your request...</p>
+            </div>
+        </div>
+
+        <!-- Notification System -->
+        <div class="notification-container" id="notificationContainer"></div>
+    </div>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js" type="application/javascript"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+# 📋 Python Dependencies for Senna Wallet - PRODUCTION
+# Core Framework
+fastapi==0.104.1
+uvicorn==0.24.0
+
+# Web3 & Blockchain
+web3==6.11.0
+eth-account==0.9.0
+
+# AI & NLP
+aiohttp==3.9.1
+httpx==0.25.2
+
+# Configuration & Environment
+python-dotenv==1.0.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Security & Cryptography
+cryptography==42.0.8
+pyjwt==2.8.0
+
+# Async & Performance
+asyncio==3.4.3
+aiofiles==23.2.1
+
+# Data Processing & Utilities
+python-dateutil==2.8.2
+requests==2.31.0
+
+# Development & Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+
+# Code Quality
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Documentation
+mkdocs==1.5.3
+mkdocs-material==9.5.3

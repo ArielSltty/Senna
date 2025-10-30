@@ -1,0 +1,17 @@
+{
+  "name": "senna-wallet-contracts",
+  "version": "1.0.0", 
+  "type": "commonjs",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network somnia",
+    "test": "hardhat test"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8", 
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.5"
+  }
+}

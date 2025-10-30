@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senna Wallet - AI-Powered Wallet Agent</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/logo.png" alt="Senna Wallet" class="logo-img">
+                <span class="logo-text">Senna Wallet</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <button class="btn btn-outline nav-connect" id="navConnectBtn">
+                    <i class="fas fa-wallet"></i>
+                    Connect Wallet
+                </button>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>AI-Powered Wallet Agent</span>
+                </div>
+                <h1 class="hero-title">
+                    Your AI-Powered Wallet Agent on <span class="gradient-text">Somnia Blockchain</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Talk to your crypto. Senna listens.
+                </p>
+                <p class="hero-description">
+                    Experience the future of cryptocurrency management with Senna Wallet's intelligent AI assistant. 
+                    Manage your assets, execute transactions, and get insights through natural conversation.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" id="heroConnectBtn">
+                        <i class="fas fa-robot"></i>
+                        Connect Wallet & Start Chatting
+                    </button>
+                    <button class="btn btn-secondary btn-large" id="learnMoreBtn">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$5M+</div>
+                        <div class="stat-label">Transactions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="chat-preview">
+                    <div class="chat-header">
+                        <div class="chat-avatar">
+                            <img src="assets/logo.png" alt="Senna AI" class="avatar-img">
+                        </div>
+                        <div class="chat-info">
+                            <div class="chat-name">Senna AI Assistant</div>
+                            <div class="chat-status">Online</div>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <img src="assets/logo.png" alt="Senna AI" class="avatar-img">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-bubble">
+                                    Hi! I'm Senna, your AI wallet assistant. How can I help you today?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message user-message">
+                            <div class="message-content">
+                                <div class="message-bubble">
+                                    Show my balance and recent transactions
+                                </div>
+                            </div>
+                            <div class="message-avatar">
+                                <img src="assets/logo.png" alt="User" class="avatar-img">
+                            </div>
+                        </div>
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <img src="assets/logo.png" alt="Senna AI" class="avatar-img">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-bubble">
+                                    Your current balance: 15.75 STT<br>
+                                    Recent transactions loaded successfully!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">Everything you need to manage your crypto with ease</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI Natural Language</h3>
+                    <p class="feature-description">
+                        Chat with Senna like you're chatting with a friend. Use natural language for all wallet commands.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Secure Multi-sig</h3>
+                    <p class="feature-description">
+                        Secure transactions with multiple confirmations. Protect your assets with layered security.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3 class="feature-title">Easy Transactions</h3>
+                    <p class="feature-description">
+                        Send crypto with natural language commands. Just say "send 10 STT to address..."
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Real-time Balance</h3>
+                    <p class="feature-description">
+                        Check your balance directly from chat. Get real-time updates on your portfolio and market movements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Get started in just 3 simple steps</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3 class="step-title">Connect Wallet</h3>
+                    <p class="step-description">
+                        Securely connect your existing wallet or create a new one with our AI-guided setup.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="step-title">Chat with Senna AI</h3>
+                    <p class="step-description">
+                        Start a conversation with Senna. Ask questions, check balances, or request transactions naturally.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="step-title">Execute Transactions</h3>
+                    <p class="step-description">
+                        Confirm and execute transactions securely. Senna handles all the complex blockchain interactions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Crypto Experience?</h2>
+                <p class="cta-description">
+                    Join thousands of users who are already managing their crypto with AI assistance.
+                </p>
+                <button class="btn btn-primary btn-large" id="ctaConnectBtn">
+                    <i class="fas fa-rocket"></i>
+                    Get Started Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="Senna Wallet" class="logo-img">
+                        <span class="logo-text">Senna Wallet</span>
+                    </div>
+                    <p class="footer-description">
+                        Your AI-powered wallet agent for the Somnia Blockchain ecosystem.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#" class="footer-link">Features</a>
+                        <a href="#" class="footer-link">How It Works</a>
+                        <a href="#" class="footer-link">Pricing</a>
+                        <a href="#" class="footer-link">API</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#" class="footer-link">Documentation</a>
+                        <a href="#" class="footer-link">Tutorials</a>
+                        <a href="#" class="footer-link">Blog</a>
+                        <a href="#" class="footer-link">Support</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#" class="footer-link">About</a>
+                        <a href="#" class="footer-link">Careers</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Senna Wallet. All rights reserved. Built for the Somnia Blockchain ecosystem.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
