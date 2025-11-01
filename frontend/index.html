@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senna Wallet - AI-Powered Wallet Agent</title>
+    <title>Senna Wallet</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/jpg" href="assets/senna.png">
 </head>
 <body>
     <div class="app-container">
@@ -15,210 +16,592 @@
             <div class="header-content">
                 <div class="logo-section">
                     <div class="logo">
-                        <i class="fas fa-brain"></i>
-                        <span>Senna Wallet</span>
+                        <img src="assets/senna.png" alt="Senna Wallet" class="logo-img">
+                        <span class="logo-text">Senna Wallet</span>
                     </div>
                     <div class="network-badge">
                         <i class="fas fa-circle"></i>
                         <span>Somnia Testnet</span>
                     </div>
                 </div>
+                
+                <nav class="nav-menu">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                    <a href="#chat" class="nav-link" data-section="chat">Chat</a>
+                    <a href="#wallet" class="nav-link" data-section="wallet">Wallet</a>
+                    <a href="#how-it-works" class="nav-link" data-section="how-it-works">How It Works</a>
+                </nav>
+
                 <div class="wallet-section">
                     <div class="wallet-info" id="walletInfo">
                         <span class="wallet-address" id="walletAddress">Not connected</span>
-                        <div class="balance" id="walletBalance">-</div>
+                        <div class="balance" id="walletBalance">- STT</div>
                     </div>
                     <button class="btn btn-primary" id="connectWalletBtn">
                         <i class="fas fa-wallet"></i>
-                        Connect Wallet
+                        Connect MetaMask
                     </button>
                     <button class="btn btn-secondary" id="createWalletBtn">
                         <i class="fas fa-plus"></i>
-                        Create New
+                        Create Wallet
                     </button>
                 </div>
             </div>
         </header>
 
-        <!-- Main Content -->
+        <!-- Main Content Sections -->
         <main class="main-content">
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <div class="sidebar-section">
-                    <h3>Quick Actions</h3>
-                    <div class="action-buttons">
-                        <button class="action-btn" id="quickBalance">
-                            <i class="fas fa-wallet"></i>
-                            Check Balance
-                        </button>
-                        <button class="action-btn" id="quickSend">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Crypto
-                        </button>
-                        <button class="action-btn" id="quickPrice">
-                            <i class="fas fa-chart-line"></i>
-                            Check Price
-                        </button>
-                        <button class="action-btn" id="quickBuy">
-                            <i class="fas fa-shopping-cart"></i>
-                            Buy SOMI
-                        </button>
-                    </div>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3>Recent Transactions</h3>
-                    <div class="transactions-list" id="transactionsList">
-                        <div class="empty-state">
-                            <i class="fas fa-exchange-alt"></i>
-                            <p>No transactions yet</p>
+            <!-- Home Section -->
+            <section id="home-section" class="content-section active">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="gradient-text">Talk to Your Crypto</span><br>
+                            Senna Listens & Executes
+                        </h1>
+                        <p class="hero-description">
+                           Senna is AI-powered wallet agent that understands natural language. 
+                            Manage your Somnia blockchain assets through simple conversation.
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn btn-large btn-primary" id="startChattingBtn">
+                                <i class="fas fa-comment"></i>
+                                Start Chatting
+                            </button>
+                            <button class="btn btn-large btn-secondary" id="learnMoreBtn">
+                                <i class="fas fa-play-circle"></i>
+                                See How It Works
+                            </button>
                         </div>
                     </div>
-                </div>
-            </aside>
-
-            <!-- Chat Interface -->
-            <section class="chat-section">
-                <div class="chat-header">
-                    <div class="ai-agent-info">
-                        <div class="ai-avatar">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="ai-details">
-                            <h2>Senna AI Assistant</h2>
-                            <p>Your personal crypto wallet agent</p>
-                        </div>
-                    </div>
-                    <div class="chat-actions">
-                        <button class="icon-btn" id="clearChatBtn" title="Clear Chat">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                        <button class="icon-btn" id="helpBtn" title="Help">
-                            <i class="fas fa-question"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Chat Messages -->
-                <div class="chat-messages" id="chatMessages">
-                    <!-- Welcome Message -->
-                    <div class="message ai-message">
-                        <div class="message-avatar">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="message-content">
-                            <div class="message-bubble">
-                                <h4>🤖 Welcome to Senna Wallet!</h4>
-                                <p>I'm your AI-powered wallet assistant for Somnia Blockchain. You can talk to me naturally to manage your crypto!</p>
-                                <div class="quick-examples">
-                                    <p><strong>Try saying:</strong></p>
-                                    <ul>
-                                        <li>"Show my balance"</li>
-                                        <li>"Send 10 STT to 0x..."</li>
-                                        <li>"What's the SOMI price today?"</li>
-                                        <li>"Create a new wallet for me"</li>
-                                        <li"I want to buy 100k IDR worth of SOMI"</li>
-                                    </ul>
-                                </div>
-                                <p>Just type what you want to do below! 👇</p>
+                    <div class="hero-visual">
+                        <div class="chat-preview">
+                            <div class="preview-message user-message">
+                                <div class="preview-avatar">👤</div>
+                                <div class="preview-bubble">Send 5 STT to 0x1a2b...3c4d</div>
                             </div>
-                            <div class="message-time">Just now</div>
+                            <div class="preview-message ai-message">
+                                <div class="preview-avatar">🤖</div>
+                                <div class="preview-bubble">
+                                    <p>I'll send 5 STT to 0x1a2b...3c4d</p>
+                                    <div class="confirmation-flow">
+                                        <p><strong>Are you sure you want to proceed?</strong></p>
+                                        <div class="confirmation-actions">
+                                            <button class="btn btn-small btn-confirm">✅ Yes, send it</button>
+                                            <button class="btn btn-small btn-cancel">❌ Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-message ai-message">
+                                <div class="preview-avatar">🤖</div>
+                                <div class="preview-bubble success">
+                                    <p>✅ Transaction Successful!</p>
+                                    <p>Sent 5 STT to 0x1a2b...3c4d</p>
+                                    <p class="explorer-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <a href="#" target="_blank">View on Explorer</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Chat Input -->
-                <div class="chat-input-container">
-                    <div class="input-wrapper">
-                        <div class="input-actions">
-                            <button class="input-action-btn" id="attachBtn" title="Attach File">
-                                <i class="fas fa-paperclip"></i>
-                            </button>
-                            <button class="input-action-btn" id="emojiBtn" title="Add Emoji">
-                                <i class="fas fa-smile"></i>
-                            </button>
+                <!-- Features Grid -->
+                <div class="features-section">
+                    <h2 class="section-title">Why Choose Senna Wallet?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Natural Language</h3>
+                            <p>No technical commands needed. Just talk like you would to a friend.</p>
+                            <ul class="feature-examples">
+                                <li>"Show my balance"</li>
+                                <li>"Send 10 SOMI to Alex"</li>
+                                <li>"What's the price today?"</li>
+                            </ul>
                         </div>
-                        <textarea 
-                            id="chatInput" 
-                            placeholder="Talk to Senna... Example: 'Send 5 STT to 0xABC...' or 'Show my balance'"
-                            rows="1"
-                        ></textarea>
-                        <button class="send-btn" id="sendMessageBtn">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3>AI-Powered</h3>
+                            <p>Advanced NLP understands context and provides smart confirmations.</p>
+                            <ul class="feature-examples">
+                                <li>Smart transaction confirmations</li>
+                                <li>Market analysis & recommendations</li>
+                                <li>Error prevention & safety checks</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Secure & Transparent</h3>
+                            <p>Built on Somnia Blockchain with full explorer integration.</p>
+                            <ul class="feature-examples">
+                                <li>Real-time transaction tracking</li>
+                                <li>Explorer links for verification</li>
+                                <li>Secure MetaMask integration</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="input-hints">
-                        <span>Press Enter to send • Shift+Enter for new line</span>
+                </div>
+
+                <!-- How It Works -->
+                <div class="how-it-works-section">
+                    <h2 class="section-title">How Senna Wallet Works</h2>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Connect Your Wallet</h3>
+                                <p>Connect MetaMask or create a new wallet on Somnia testnet</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Start Chatting</h3>
+                                <p>Type your request in natural language - no technical knowledge needed</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>AI Understands & Confirms</h3>
+                                <p>Senna parses your intent and asks for confirmation before executing</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Execute & Verify</h3>
+                                <p>Transactions are executed on-chain with explorer links for verification</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Cases Table -->
+                <div class="use-cases-section">
+                    <h2 class="section-title">What You Can Do With Senna</h2>
+                    <div class="use-cases-table">
+                        <div class="table-header">
+                            <div class="table-col command-col">Your Command</div>
+                            <div class="table-col action-col">Senna's Action</div>
+                            <div class="table-col features-col">Advanced Features</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-col command-col">"Show my balance"</div>
+                            <div class="table-col action-col">Displays current STT/SOMI balance</div>
+                            <div class="table-col features-col">
+                                <span class="feature-tag">Real-time</span>
+                                <span class="feature-tag">Multi-currency</span>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-col command-col">"Send 10 STT to 0xABC..."</div>
+                            <div class="table-col action-col">
+                                • Confirms transaction details<br>
+                                • Executes on-chain transfer<br>
+                                • Provides explorer link
+                            </div>
+                            <div class="table-col features-col">
+                                <span class="feature-tag">Smart Confirmation</span>
+                                <span class="feature-tag">Explorer Integration</span>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-col command-col">"I want to buy $50 of SOMI"</div>
+                            <div class="table-col action-col">
+                                • Shows current price<br>
+                                • Provides Stripe payment link<br>
+                                • Estimates received amount
+                            </div>
+                            <div class="table-col features-col">
+                                <span class="feature-tag">Fiat On-Ramp</span>
+                                <span class="feature-tag">Price Estimation</span>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-col command-col">"What's the best place to buy SOMI?"</div>
+                            <div class="table-col action-col">
+                                • Analyzes DEX prices<br>
+                                • Compares exchange rates<br>
+                                • Recommends best option
+                            </div>
+                            <div class="table-col features-col">
+                                <span class="feature-tag">Market Analysis</span>
+                                <span class="feature-tag">AI Recommendations</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Wallet Panel -->
-            <aside class="wallet-panel">
-                <div class="panel-section">
-                    <h3>Wallet Details</h3>
-                    <div class="wallet-details" id="walletDetails">
-                        <div class="detail-item">
-                            <span class="detail-label">Address:</span>
-                            <span class="detail-value" id="detailAddress">-</span>
-                            <button class="copy-btn" data-target="detailAddress">
-                                <i class="fas fa-copy"></i>
+            <!-- Chat Section -->
+            <section id="chat-section" class="content-section">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div class="ai-agent-info">
+                            <div class="ai-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="ai-details">
+                                <h2>Senna AI Assistant</h2>
+                                <p>Powered by Advanced NLP • Somnia Testnet</p>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="icon-btn" id="clearChatBtn" title="Clear Chat">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <button class="icon-btn" id="helpBtn" title="Help & Examples">
+                                <i class="fas fa-question"></i>
+                            </button>
+                            <button class="icon-btn" id="exportChatBtn" title="Export Chat">
+                                <i class="fas fa-download"></i>
                             </button>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Balance:</span>
-                            <span class="detail-value" id="detailBalance">- STT</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Network:</span>
-                            <span class="detail-value">Somnia Testnet</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Chain ID:</span>
-                            <span class="detail-value">50312</span>
-                        </div>
                     </div>
-                </div>
 
-                <div class="panel-section">
-                    <h3>Quick Tools</h3>
-                    <div class="tool-buttons">
-                        <button class="tool-btn" id="exportWalletBtn">
-                            <i class="fas fa-download"></i>
-                            Export Wallet
-                        </button>
-                        <button class="tool-btn" id="viewOnExplorerBtn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View on Explorer
-                        </button>
-                        <button class="tool-btn" id="gasPriceBtn">
-                            <i class="fas fa-gas-pump"></i>
-                            Check Gas Price
-                        </button>
+                    <!-- Chat Messages -->
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Welcome message will be inserted here -->
                     </div>
-                </div>
 
-                <div class="panel-section">
-                    <h3>Market Data</h3>
-                    <div class="market-data" id="marketData">
-                        <div class="market-item">
-                            <span class="market-label">SOMI Price:</span>
-                            <span class="market-value" id="somiPrice">-</span>
+                    <!-- Chat Input -->
+                    <div class="chat-input-container">
+                        <div class="input-wrapper">
+                            <div class="input-actions">
+                                <button class="input-action-btn" id="quickActionsBtn" title="Quick Actions">
+                                    <i class="fas fa-bolt"></i>
+                                </button>
+                                <button class="input-action-btn" id="attachBtn" title="Attach File">
+                                    <i class="fas fa-paperclip"></i>
+                                </button>
+                            </div>
+                            <textarea 
+                                id="chatInput" 
+                                placeholder="Talk to Senna... Example: 'Send 5 STT to 0xABC...' or 'Show my balance'"
+                                rows="1"
+                            ></textarea>
+                            <button class="send-btn" id="sendMessageBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
                         </div>
-                        <div class="market-item">
-                            <span class="market-label">STT Price:</span>
-                            <span class="market-value" id="sttPrice">-</span>
+                        <div class="input-hints">
+                            <span>Press Enter to send • Shift+Enter for new line</span>
+                            <span class="hint-examples">
+                                Try: "balance", "send 10 STT", "buy SOMI", "gas price"
+                            </span>
                         </div>
-                        <div class="market-item">
-                            <span class="market-label">24h Change:</span>
-                            <span class="market-value positive" id="priceChange">-</span>
+                    </div>
+
+                    <!-- Quick Actions Panel -->
+                    <div class="quick-actions-panel" id="quickActionsPanel">
+                        <div class="quick-actions-grid">
+                            <button class="quick-action-btn" data-command="Show my balance">
+                                <i class="fas fa-wallet"></i>
+                                Check Balance
+                            </button>
+                            <button class="quick-action-btn" data-command="Send 10 STT to">
+                                <i class="fas fa-paper-plane"></i>
+                                Send STT
+                            </button>
+                            <button class="quick-action-btn" data-command="What's the SOMI price?">
+                                <i class="fas fa-chart-line"></i>
+                                Check Price
+                            </button>
+                            <button class="quick-action-btn" data-command="Buy 100000 IDR of SOMI">
+                                <i class="fas fa-shopping-cart"></i>
+                                Buy SOMI
+                            </button>
+                            <button class="quick-action-btn" data-command="Show gas price">
+                                <i class="fas fa-gas-pump"></i>
+                                Gas Price
+                            </button>
+                            <button class="quick-action-btn" data-command="Create new wallet">
+                                <i class="fas fa-plus"></i>
+                                New Wallet
+                            </button>
                         </div>
                     </div>
                 </div>
-            </aside>
+            </section>
+
+            <!-- Wallet Section -->
+            <section id="wallet-section" class="content-section">
+                <div class="wallet-dashboard">
+                    <div class="dashboard-header">
+                        <h2>Wallet Management</h2>
+                        <p>Manage your Somnia blockchain assets and transactions</p>
+                    </div>
+
+                    <div class="wallet-grid">
+                        <!-- Balance Card -->
+                        <div class="dashboard-card balance-card">
+                            <div class="card-header">
+                                <h3>Total Balance</h3>
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="balance-amount" id="dashboardBalance">0 STT</div>
+                                <div class="balance-equivalent" id="balanceEquivalent">~ $0.00</div>
+                                <div class="balance-actions">
+                                    <button class="btn btn-small btn-primary" id="refreshBalanceBtn">
+                                        <i class="fas fa-sync-alt"></i>
+                                        Refresh
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions Card -->
+                        <div class="dashboard-card actions-card">
+                            <div class="card-header">
+                                <h3>Quick Actions</h3>
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="action-buttons-grid">
+                                    <button class="action-card-btn" id="dashboardSendBtn">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Send
+                                    </button>
+                                    <button class="action-card-btn" id="dashboardReceiveBtn">
+                                        <i class="fas fa-qrcode"></i>
+                                        Receive
+                                    </button>
+                                    <button class="action-card-btn" id="dashboardBuyBtn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Buy
+                                    </button>
+                                    <button class="action-card-btn" id="dashboardSwapBtn">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        Swap
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wallet Info Card -->
+                        <div class="dashboard-card info-card">
+                            <div class="card-header">
+                                <h3>Wallet Information</h3>
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="info-item">
+                                    <span class="info-label">Address:</span>
+                                    <span class="info-value" id="dashboardAddress">Not connected</span>
+                                    <button class="copy-btn" data-target="dashboardAddress">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Network:</span>
+                                    <span class="info-value">Somnia Testnet</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Chain ID:</span>
+                                    <span class="info-value">50312</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Status:</span>
+                                    <span class="info-value status-connected" id="connectionStatus">Disconnected</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Market Data Card -->
+                        <div class="dashboard-card market-card">
+                            <div class="card-header">
+                                <h3>Market Data</h3>
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="market-item">
+                                    <span class="market-label">SOMI Price:</span>
+                                    <span class="market-value" id="dashboardSomiPrice">-</span>
+                                </div>
+                                <div class="market-item">
+                                    <span class="market-label">STT Price:</span>
+                                    <span class="market-value" id="dashboardSttPrice">-</span>
+                                </div>
+                                <div class="market-item">
+                                    <span class="market-label">24h Change:</span>
+                                    <span class="market-value positive" id="dashboardPriceChange">-</span>
+                                </div>
+                                <div class="market-item">
+                                    <span class="market-label">Market Cap:</span>
+                                    <span class="market-value" id="dashboardMarketCap">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Transactions Card -->
+                        <div class="dashboard-card transactions-card">
+                            <div class="card-header">
+                                <h3>Recent Transactions</h3>
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="transactions-list" id="dashboardTransactions">
+                                    <div class="empty-state">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        <p>No transactions yet</p>
+                                        <small>Your transactions will appear here</small>
+                                    </div>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="btn btn-small btn-secondary" id="viewAllTransactionsBtn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        View on Explorer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Explorer Tools Card -->
+                        <div class="dashboard-card explorer-card">
+                            <div class="card-header">
+                                <h3>Blockchain Explorer</h3>
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="card-content">
+                                <p>Verify your transactions on the Somnia blockchain explorer</p>
+                                <div class="explorer-links">
+                                    <a href="https://shannon-explorer.somnia.network/" target="_blank" class="explorer-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Shannon Explorer
+                                    </a>
+                                    <a href="https://dream-rpc.somnia.network/" target="_blank" class="explorer-link">
+                                        <i class="fas fa-server"></i>
+                                        RPC Endpoint
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section id="how-it-works-section" class="content-section">
+                <div class="how-it-works-detail">
+                    <h2>How Senna Wallet Works</h2>
+                    
+                    <div class="detailed-workflow">
+                        <div class="workflow-phase">
+                            <h3>Phase 1: Natural Language Processing</h3>
+                            <div class="phase-content">
+                                <div class="phase-step">
+                                    <h4>Text Input</h4>
+                                    <p>User types natural language command</p>
+                                    <code>"Send 5 STT to 0x1a2b3c4d..."</code>
+                                </div>
+                                <div class="phase-step">
+                                    <h4>Intent Recognition</h4>
+                                    <p>AI identifies the action type and parameters</p>
+                                    <code>Action: TRANSFER, Amount: 5, Token: STT, To: 0x1a2b3c4d...</code>
+                                </div>
+                                <div class="phase-step">
+                                    <h4>Parameter Extraction</h4>
+                                    <p>Extracts and validates transaction details</p>
+                                    <code>✅ Valid address | ✅ Sufficient balance | ✅ Correct amount</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-phase">
+                            <h3>Phase 2: Smart Confirmation</h3>
+                            <div class="phase-content">
+                                <div class="phase-step">
+                                    <h4>Risk Assessment</h4>
+                                    <p>AI analyzes transaction for potential risks</p>
+                                    <ul>
+                                        <li>High gas price detection</li>
+                                        <li>Unknown address warning</li>
+                                        <li>Insufficient balance check</li>
+                                    </ul>
+                                </div>
+                                <div class="phase-step">
+                                    <h4>User Confirmation</h4>
+                                    <p>Interactive confirmation flow</p>
+                                    <div class="confirmation-example">
+                                        <p><strong>🤖 Senna:</strong> I'll send 5 STT to 0x1a2b3c4d...</p>
+                                        <p><strong>🤖 Senna:</strong> Are you sure you want to proceed?</p>
+                                        <div class="confirmation-buttons">
+                                            <button>✅ Yes, send it</button>
+                                            <button>❌ Cancel</button>
+                                            <button>✏️ Edit amount</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-phase">
+                            <h3>Phase 3: On-Chain Execution</h3>
+                            <div class="phase-content">
+                                <div class="phase-step">
+                                    <h4>Transaction Building</h4>
+                                    <p>Creates and signs the blockchain transaction</p>
+                                    <code>web3.eth.sendTransaction({...})</code>
+                                </div>
+                                <div class="phase-step">
+                                    <h4>Network Interaction</h4>
+                                    <p>Submits transaction to Somnia network</p>
+                                    <ul>
+                                        <li>Gas estimation</li>
+                                        <li>Nonce management</li>
+                                        <li>Transaction signing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-phase">
+                            <h3>Phase 4: Verification & Feedback</h3>
+                            <div class="phase-content">
+                                <div class="phase-step">
+                                    <h4>Transaction Monitoring</h4>
+                                    <p>Monitors transaction status on-chain</p>
+                                    <code>⏳ Pending → ✅ Confirmed</code>
+                                </div>
+                                <div class="phase-step">
+                                    <h4>Explorer Integration</h4>
+                                    <p>Provides direct links to blockchain explorer</p>
+                                    <div class="explorer-example">
+                                        <p>✅ Transaction Successful!</p>
+                                        <p>Tx Hash: 0xabc123...</p>
+                                        <a href="#">🔍 View on Shannon Explorer</a>
+                                    </div>
+                                </div>
+                                <div class="phase-step">
+                                    <h4>User Notification</h4>
+                                    <p>Comprehensive success/error reporting</p>
+                                    <ul>
+                                        <li>Transaction confirmation</li>
+                                        <li>Gas used information</li>
+                                        <li>Block number and timestamp</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
-        <!-- Modals -->
+        <!-- Modals (Keep existing modals with enhancements) -->
         <!-- Wallet Creation Modal -->
         <div class="modal" id="walletModal">
             <div class="modal-content">
@@ -264,6 +647,14 @@
                     <div class="transaction-details" id="transactionDetails">
                         <!-- Transaction details will be populated here -->
                     </div>
+                    <div class="confirmation-actions">
+                        <p><strong>Please confirm this transaction:</strong></p>
+                        <div class="confirmation-buttons">
+                            <button class="btn btn-confirm" id="confirmTransactionYes">✅ Yes, proceed</button>
+                            <button class="btn btn-cancel" id="confirmTransactionNo">❌ Cancel</button>
+                            <button class="btn btn-edit" id="editTransaction">✏️ Edit Details</button>
+                        </div>
+                    </div>
                     <div class="private-key-input">
                         <label for="privateKeyInput">Private Key (for signing):</label>
                         <input type="password" id="privateKeyInput" placeholder="Enter your private key">
@@ -287,8 +678,8 @@
         <!-- Notification System -->
         <div class="notification-container" id="notificationContainer"></div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
